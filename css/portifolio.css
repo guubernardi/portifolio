@@ -17,7 +17,7 @@ body {
 
 html {
     scroll-behavior: smooth;
-    scrollbar-gutter: stable both-edges;
+    scrollbar-gutter: stable;
 }
 
 ::-webkit-scrollbar {
@@ -110,7 +110,7 @@ html {
 
 .main h1 {
     color: #FFFFFF;          
-    font-size: 54px;
+    font-size: 75px;
 }
 
 .main p {
@@ -193,7 +193,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -261,6 +261,75 @@ h2 {
     opacity: 1;
     cursor: pointer;
 }
+
+/* ===== Tecnologias (cards estilo referência) ===== */
+.techs{
+  --bg: #F1F5FF;
+  --card: #ECEFF4;           /* cinza claro */
+  --ink: #0B2C6F;            /* azul escuro */
+  --accent: #1E9BFF;         /* acento */
+  --accent-dark: #1553CC;
+
+  background: var(--bg);
+  padding: 80px 10%;
+  color: var(--ink);
+}
+
+.techs-head h1{
+  font-size: 32px;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+.techs-head p{
+  color: var(--accent-dark);
+  font-style: italic;
+  margin: 0 0 28px;
+}
+
+.tech-grid{
+  list-style: none; margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+}
+
+.tech-card{
+  background: var(--card);
+  border: 1px solid rgba(21,83,204,.15);
+  border-radius: 14px;
+  padding: 34px 18px;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(6,27,69,.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.tech-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(6,27,69,.12);
+  border-color: rgba(30,155,255,.35);
+}
+
+.tech-icon{
+  width: 40px; height: 40px;
+  color: var(--ink);          /* ícone azul escuro */
+  transition: color .18s ease;
+}
+.tech-card:hover .tech-icon{ color: var(--accent); }
+
+.tech-title{
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* responsivo fino */
+@media (max-width: 560px){
+  .techs{ padding: 60px 6%; }
+  .tech-grid{ grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+
 
 /* Rodapé */
 .footer{
@@ -343,8 +412,8 @@ h2 {
   border-radius: 12px;
   display: grid; 
   place-items: center;
-  background: rgba(30,155,255,.12);  /* “azul translúcido” */
-  color:#1E9BFF;                     /* ÍCONES AZUIS */
+  background: rgba(30,155,255,.12); 
+  color:#1E9BFF;                   
   text-decoration: none;
   transition: transform .2s ease, background-color .2s ease, color .2s ease;
 }
@@ -367,5 +436,46 @@ h2 {
   text-align:center;
   color:#96A9FF;
   font-size:14px;
+}
+
+/* Responsividade */
+@media (max-width: 560px){
+  .main h1 {
+    font-size: 45px;
+  }
+
+  .main p {
+    font-size: 10px;
+  }
+
+  .nav {
+    padding: 0px 0px 0px 1px;
+    gap: 30px;
+  }
+
+  .sobre {
+    flex-direction: column;
+    padding-top: 80px;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 20px;
+  }
+
+  .sobre div {
+    max-width: 80%;
+  }
+
+  .sobre div h1{
+    font-size: 45px;
+  }
+
+  .sobre img {
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  .projetos img {
+    width: 40%;
+  }
 }
 
